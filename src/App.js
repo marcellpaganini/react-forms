@@ -1,17 +1,26 @@
-import { useState } from 'react';
+import { useRef } from 'react';
 import './App.css';
 import FormInput from './Components/FormInput';
 
 function App() {
-  const [userName, setUserName] = useState("");
-  console.log(userName)
+  //const [userName, setUserName] = useState("");
+  const userNameRef = useRef();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const data = new FormData(e.target)
+    console.log(Object.fromEntries(data.entries()));
+  };
+
+  console.log(userNameRef)
   return (
     <div className="App">
-      <form>
-        <FormInput placeholder="User Name" setUserName={setUserName} />
-        <FormInput placeholder="Email" />
-        <FormInput placeholder="Full Name" />
-        <FormInput placeholder="Phone Number" />  
+      <form onSubmit={handleSubmit}>
+        <FormInput name="userName" placeholder="User Name" refer={userNameRef} />
+        <FormInput name="email" placeholder="Email" />
+        <FormInput name="fullName" placeholder="Full Name" />
+        <FormInput name="phone" placeholder="Phone Number" />  
+        <button>Submit</button>
       </form>
     </div>
   );
