@@ -21,6 +21,7 @@ span {
     font-size: 12px;
     padding: 1px;
     color: red;
+    display: none;
 }
 
 input:invalid ~ span {
