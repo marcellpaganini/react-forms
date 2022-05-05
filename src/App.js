@@ -14,12 +14,14 @@ function App() {
       name: "userName",
       type: "text",
       placeholder: "User Name",
+      errorMessage: "User name should be 3-16 characters and shouldn't include any special chatacter.",
       label: "User Name"
     },
     { id: 2,
       name: "email",
       type: "email",
       placeholder: "Email",
+      errorMessage: "It should be a valid email address.",
       label: "Email"
     },
     { id: 3,
@@ -32,12 +34,14 @@ function App() {
       name: "password",
       type: "password",
       placeholder: "Password",
+      errorMessage: "Password should be 8-20 chatacters and include at least 1 character, 1 number and 1 special character.",
       label: "Password"
     },
     { id: 5,
       name: "confirmPassword",
       type: "password",
       placeholder: "Confirm Password",
+      errorMessage: "Passwords don't match.",
       label: "Confirm Password"
     }
   ];
